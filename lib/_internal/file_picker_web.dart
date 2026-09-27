@@ -2,23 +2,23 @@ import 'dart:async';
 import 'dart:js_interop';
 import 'dart:typed_data';
 
-import 'package:file_picker/file_picker.dart';
+import 'package:file_picker_web_only/file_picker.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:path/path.dart' as p;
 import 'package:web/web.dart';
 
-class FilePickerWeb extends FilePicker {
+class FilePickerWebOnly extends FilePicker {
   late Element _target;
   final String _kFilePickerInputsDomId = '__file_picker_web-file-input';
 
   final int _readStreamChunkSize = 1000 * 1000; // 1 MB
 
-  FilePickerWeb._() {
+  FilePickerWebOnly._() {
     _target = _ensureInitialized(_kFilePickerInputsDomId);
   }
 
   static void registerWith(Registrar registrar) {
-    FilePicker.platform = FilePickerWeb._();
+    FilePicker.platform = FilePickerWebOnly._();
   }
 
   /// Initializes a DOM container where we can host input elements.

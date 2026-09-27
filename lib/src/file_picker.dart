@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:typed_data';
 
-import 'package:file_picker/src/file_picker_result.dart';
+import 'package:file_picker_web_only/src/file_picker_result.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 const String defaultDialogTitle = '';
